@@ -1,0 +1,177 @@
+:root {
+  --bg: #f5f6f8;
+  --panel: #ffffff;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --line: #d1d5db;
+  --accent: #2563eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.container {
+  width: min(920px, 94vw);
+  margin: 20px auto;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 700;
+}
+
+h1 {
+  margin-bottom: 14px;
+  font-size: 1.4rem;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  padding: 14px;
+}
+
+#http-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.top-row {
+  display: grid;
+  grid-template-columns: 150px 1fr 110px;
+  gap: 8px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field span {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+input,
+select,
+textarea,
+button {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 9px;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: 2px solid #93c5fd;
+  outline-offset: 1px;
+}
+
+textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.send-btn {
+  align-self: end;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.small-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.headers-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.headers-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.header-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 44px;
+  gap: 6px;
+}
+
+.response-panel {
+  margin-top: 12px;
+}
+
+.status {
+  margin-top: 8px;
+  font-weight: 700;
+}
+
+.response-block {
+  margin-top: 10px;
+}
+
+pre {
+  margin: 6px 0 0;
+  background: #f9fafb;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 320px;
+  overflow: auto;
+}
+
+@media (max-width: 760px) {
+  .top-row {
+    grid-template-columns: 1fr;
+  }
+
+  .send-btn {
+    width: 100%;
+  }
+
+  .header-row {
+    grid-template-columns: 1fr;
+  }
+
+  .small-btn {
+    width: 100%;
+  }
+}

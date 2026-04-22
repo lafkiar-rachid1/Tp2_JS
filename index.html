@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client HTTP minimaliste</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Client HTTP minimaliste</h1>
+
+    <form id="http-form" class="panel">
+      <div class="top-row">
+        <label class="field method-field">
+          <span>Methode</span>
+          <select id="method" name="method">
+            <option>GET</option>
+            <option>POST</option>
+            <option>PUT</option>
+            <option>PATCH</option>
+            <option>DELETE</option>
+            <option>HEAD</option>
+          </select>
+        </label>
+
+        <label class="field url-field">
+          <span>URL</span>
+          <input id="url" name="url" type="url" placeholder="https://api.exemple.com/resource" required />
+        </label>
+
+        <button type="submit" class="send-btn">Envoyer</button>
+      </div>
+
+      <section class="headers-section">
+        <div class="headers-title-row">
+          <h2>Headers</h2>
+          <button type="button" id="add-header" class="small-btn" aria-label="Ajouter un header">+</button>
+        </div>
+
+        <div id="headers-list" class="headers-list">
+          <div class="header-row">
+            <input type="text" class="header-key" placeholder="Header key" />
+            <input type="text" class="header-value" placeholder="Header value" />
+            <button type="button" class="small-btn remove-header" aria-label="Supprimer le header">x</button>
+          </div>
+        </div>
+      </section>
+
+      <label class="field block-field">
+        <span>Body</span>
+        <textarea id="body" name="body" placeholder='{"message":"Bonjour"}'></textarea>
+      </label>
+    </form>
+
+    <section class="panel response-panel">
+      <h2>Reponse</h2>
+      <p id="status" class="status">Status: -</p>
+
+      <div class="response-block">
+        <h3>Headers</h3>
+        <pre id="response-headers">-</pre>
+      </div>
+
+      <div class="response-block">
+        <h3>Corps de la reponse</h3>
+        <pre id="response-body">-</pre>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
