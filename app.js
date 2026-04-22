@@ -17,7 +17,6 @@ function createHeaderRow() {
 }
 
 function collectHeaders() {
-  const headers = {};
   const rows = headersList.querySelectorAll(".header-row");
 
   rows.forEach((row) => {
