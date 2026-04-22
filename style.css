@@ -19,7 +19,10 @@ body {
   background: var(--bg);
 }
 
-
+.container {
+  width: min(920px, 94vw);
+  margin: 20px auto;
+}
 
 h1,
 h2,
